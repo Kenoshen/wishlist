@@ -1,0 +1,10 @@
+<div ng-controller="UserCtrl">
+    <button ng-click="home()">Back</button>
+    <h1>{{__user.name}}'s Wishlists</h1>
+    <table>
+        <tr ng-repeat="(name, wishlist) in wishlists" ng-click="detailList(name)">
+            <td>{{name}}</td>
+            <td>{{wishlist.items.length}}</td>
+        </tr>
+    </table>
+</div>

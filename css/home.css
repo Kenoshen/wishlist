@@ -1,0 +1,29 @@
+#publicwishlists {
+	height: 100%;
+}
+
+#publicwishlists dl {
+	background-color: <theme.cur.b3>;
+	border-radius: 10px;
+	padding: 20px;
+}
+
+#publicwishlists .user{
+	cursor: pointer;
+	font-size: 40px;
+}
+
+#publicwishlists .user:hover{
+	position: relative;
+	top: -2px;
+}
+
+#publicwishlists .wishlist{
+	cursor: pointer;
+	font-size: 20px;
+}
+
+#publicwishlists .wishlist:hover{
+	position: relative;
+	top: -2px;
+}

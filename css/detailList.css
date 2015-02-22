@@ -1,0 +1,8 @@
+#items tr:hover td{
+	background-color: <theme.cur.h4>;
+	cursor: auto;
+}
+
+#items tr.closed td{
+	background-color: gray;
+}

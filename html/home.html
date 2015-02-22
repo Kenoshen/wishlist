@@ -1,0 +1,11 @@
+<div id="publicwishlists">
+	<h1>Public Wishlists</h1>
+	<dl>
+		<div ng-repeat="user in users" ng-if="wishlistsForOwnerId(user._id).length > 0">
+			<dt class="user" ng-click="detailUser(user)">{{user.public.name.first}} {{user.public.name.last}}:</dt>
+			<div ng-repeat="wishlist in wishlistsForOwnerId(user._id)">
+				<dd class="wishlist" ng-click="detailList(wishlist)">{{wishlist.name}} ({{wishlist.items.length}})</dd>
+			</div>
+		</div>
+	</dl>
+</div>

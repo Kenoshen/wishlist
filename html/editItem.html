@@ -1,0 +1,12 @@
+<div ng-controller="EditItemCtrl">
+    <button ng-click="back()">Cancel</button>
+    <img src="{{addHTTPPrefix(currentItem.imgUrl)}}" alt="{{currentItem.imgUrl}}"/>
+    <h1>Name: <input ng-model="currentItem.name" type="text" placeholder="Name of the item"/></h1>
+    <h2>Image: <input ng-model="currentItem.imgUrl" type="text" placeholder="Image url"/></h2>
+    <h2>Notes: <textarea ng-model="currentItem.notes" placeholder="Notes about item"></textarea></h2>
+    <h2>Price: <input ng-model="currentItem.price" type="text" placeholder="Price of item"/></h2>
+    <h2>Where to get it: <input ng-model="currentItem.location" type="text" placeholder="URL or just a place"/></h2>
+    <h2>Status: <input ng-model="currentItem.status" value="open" type="radio"/>Open<input ng-model="currentItem.status" value="closed" type="radio"/>Closed</h2>
+    <button ng-click="save(detailList)">Save</button>
+    <button ng-click="delete(detailList)">Delete</button>
+</div>

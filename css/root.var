@@ -1,0 +1,35 @@
+{
+	"body":{
+	},
+	"menubar":{
+		"height": "50px",
+		"transition": "all 0.25s ease-in-out",
+		"buttons": {
+			"height": "30px",
+			"margin": "10px",
+			"leftslide": "-75px"
+		},
+		"dropdown":{
+			"hover":{
+				
+			}
+		}
+	},
+	"home": {
+		"list": {
+			
+		}
+	},
+	"theme":{
+		"cur":{
+			"b1": "#222",
+			"b2": "#888",
+			"b3": "#bbb",
+			"b4": "#ddd",
+			"h1": "#66f",
+			"h2": "#00f",
+			"h3": "#004",
+			"h4": "#bbf"
+		}
+	}
+}

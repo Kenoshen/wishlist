@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html ng-app="wishlistApp">
+<head>
+    <!-- Metadata -->
+    <title>Wishlist</title>
+    <link rel="shortcut icon" href="http://www.bytebreakstudios.com/wishlist/favicon.ico?v=2" />
+    <!-- CSS -->
+    <link href="css/main.css" rel="stylesheet" type="text/css" />
+    <link href="css/menu.css" rel="stylesheet" type="text/css" />
+    <link href="css/home.css" rel="stylesheet" type="text/css" />
+    <link href="css/detailList.css" rel="stylesheet" type="text/css" />
+    <link href='../fonts/roboto.css' rel='stylesheet' type='text/css'>
+    <!-- Javascript dependencies -->
+    <script src="../js/jquery-1.11.1/jquery.js" type="text/javascript"></script>
+    <script src="../js/angular-1.3.0/angular.js" type="text/javascript"></script>
+    <script src="../js/angular-1.3.0/angular-route.js" type="text/javascript"></script>
+    <script src="../js/angular-1.3.0/angular-cookies.js" type="text/javascript"></script>
+    <!-- My Javascript -->
+    <script src="js/app.js" type="text/javascript"></script>
+    <script src="js/ctrls.js" type="text/javascript"></script>
+    <script src="js/directives.js" type="text/javascript"></script>
+    <script src="../js/user/user.js" type="text/javascript"></script>
+    <script src="../js/wishlist/wishlist.js" type="text/javascript"></script>
+    <script src="../js/auth/basicAuth.js" type="text/javascript"></script>
+</head>
+<body ng-init="menuBar = {dropdown:{show: false}}" ng-click="menuBar.dropdown.show = false;">
+    <div id="menuPush"></div>
+    <div id="menuBar">
+        <div class="buttons">
+            <div class="rightside">
+                <div class="user" ng-show="userForId(creds.user)" ng-click=" myWishlists()">{{userForId(creds.user).public.name.first}}</div>
+            </div>
+            <div class="leftside" ng-class="{showall: (isBack())}">
+                <div class="back" ng-click="back()"></div>
+                <div class="menu" ng-click="menuBar.dropdown.show = !(menuBar.dropdown.show);" ng-class="{show: menuBar.dropdown.show}" stop-event></div>
+            </div>
+        </div>
+        <div class="dropdown" ng-class="{show: menuBar.dropdown.show}">
+            <div class="dropdownOption" ng-show="!(userIsLoggedIn)" ng-click="loginPage()">Log in</div>
+            <div class="dropdownOption" ng-show="!(userIsLoggedIn)" ng-click="signupPage()">Sign up</div>
+            <div class="dropdownOption" ng-show="userIsLoggedIn" ng-click="logout(); home()">Sign out</div>
+            <div class="dropdownOption" ng-click="home()">Public Wishlists</div>
+            <div class="dropdownOption" ng-show="userIsLoggedIn" ng-click="myWishlists()">My Wishlists</div>
+        </div>
+    </div>
+    <div ng-view autoscroll="true" id="content"></div>
+    <div id="footerPush"></div>
+    <footer>
+        <p>
+            &copy; 2014 Michael Wingfield, all rights reserved
+        </p>
+    </footer>
+</body>
+</html>

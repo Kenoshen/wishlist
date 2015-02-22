@@ -1,0 +1,113 @@
+#menuPush {
+	width: 100%;
+	height: <menubar.height>;
+}
+
+#menuBar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: <menubar.height>;
+}
+#menuBar *{
+	-webkit-transition: <menubar.transition>;
+	-moz-transition: <menubar.transition>;
+	-ms-transition: <menubar.transition>;
+	-o-transition: <menubar.transition>;
+	transition: <menubar.transition>;
+}
+#menuBar div.buttons{
+	background-color: <theme.cur.b2>;
+	height: <menubar.height>;
+}
+
+#menuBar div.leftside{
+	position: relative;
+	left: <menubar.buttons.leftslide>;
+	width: 200px;
+	height: <menubar.height>;
+}
+
+#menuBar div.leftside.showall{
+	left: 0px;
+}
+
+#menuBar div.rightside{
+	float: right;
+	height: <menubar.height>;
+}
+
+#menuBar div.rightside div.user{
+	font-size: 25px;
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+	padding: 0 20px;
+	background-color: <theme.cur.b3>;
+	cursor: pointer;
+	height: <menubar.height>;
+}
+
+#menuBar div.back, #menuBar div.menu{
+	display: inline-block;
+	width:  <menubar.buttons.height>;
+	height: <menubar.buttons.height>;
+	margin-top: <menubar.buttons.margin>;
+	margin-bottom: <menubar.buttons.margin>;
+	margin-left: 10px;
+	margin-right: 40px;
+	background-size: 100%;
+	-moz-transform: rotate(180deg);
+	-webkit-transform: rotate(180deg);
+	-o-transform: rotate(180deg);
+	-ms-transform: rotate(180deg);
+	transform: rotate(180deg);
+	cursor: pointer;
+}
+
+#menuBar div.back{
+	background-image: url("../../img/icons/back-arrow.svg");
+}
+
+#menuBar div.back:hover{
+	position: relative;
+	left: -5px;
+}
+
+#menuBar div.menu{
+	background-image: url("../../img/icons/menu.svg");
+}
+
+#menuBar div.menu:hover{
+	position: relative;
+	top: 5px;
+}
+
+#menuBar div.menu.show{
+	-moz-transform: rotate(0deg);
+	-webkit-transform: rotate(0deg);
+	-o-transform: rotate(0deg);
+	-ms-transform: rotate(0deg);
+	transform: rotate(0deg);
+}
+
+#menuBar div.dropdown{
+	position: relative;
+	top: -200px;
+	z-index: -1000;
+	background-color: <theme.cur.b2>;
+	cursor: pointer;
+	width: 20%;
+}
+
+#menuBar div.dropdown.show{
+	top: 0px;
+}
+
+#menuBar div.dropdownOption{
+	font-size: 30px;
+}
+
+#menuBar div.dropdownOption:hover{
+	background-color: <theme.cur.b3>;
+}

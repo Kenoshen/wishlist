@@ -1,0 +1,44 @@
+<div ng-controller="DetailListCtrl">
+    <h1>{{currentUser.public.name.first}}: {{currentWishlist.name}}</h1>
+    <table id="items">
+        <colgroup>
+            <col />
+            <col />
+            <col />
+            <col />
+            <col style="width: 40px" />
+            <col />
+            <col />
+            <col />
+            <col />
+        </colgroup>
+        <tr>
+            <th>Image</th>
+            <th>Name</th>
+            <th>Notes</th>
+            <th>Price</th>
+            <th>Where to Buy</th>
+            <th>Status</th>
+            <th></th>
+            <th ng-show="authedUser()">Edit</th>
+            <th ng-show="authedUser()">Move</th>
+        </tr>
+        <tr ng-repeat="i in currentWishlist.items" ng-class="{closed: (i.status === 'closed')}">
+            <td><img src="{{addHTTPPrefix(i.imgUrl)}}" alt="{{i.imgUrl}}"/></td>
+            <td>{{i.name}}</td>
+            <td>{{i.notes}}</td>
+            <td>{{i.price}}</td>
+            <td class="location"><a ng-href="{{addHTTPPrefix(i.location)}}" target="_blank">{{i.location}}</a></td>
+            <td>{{i.status}}</td>
+            <td>
+                <button ng-click="i.status = 'closed'; markAs(i);" ng-show="i.status === 'open'">Mark as Bought</button>
+                <button ng-click="i.status = 'open'; markAs(i);" ng-show="i.status === 'closed'">Mark as Available</button>
+            </td>
+            <td ng-show="authedUser()"><button ng-click="editItem(currentWishlist, i)">Edit</button></td>
+            <td ng-show="authedUser()"><button ng-click="move(i, -1)">&#x25B2;</button><br /><button ng-click="move(i, 1)">&#x25BC;</button></td>
+        </tr>
+        <tr ng-show="authedUser()">
+            <td colspan="9" ng-click="newItem()">Add New Item</td>
+        </tr>
+    </table>
+</div>

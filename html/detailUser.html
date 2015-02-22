@@ -1,0 +1,18 @@
+<div ng-controller="DetailUserCtrl" id="detailUser">
+    <h1>{{currentUser.public.name.first}}'s Wishlists</h1>
+    <table>
+    	<thead>
+    		<th>Name</th>
+    		<th>Public</th>
+    		<th>Items</th>
+    	</thead>
+        <tr ng-repeat="wishlist in wishlistsForOwnerId(currentUser._id)" ng-click="detailList(wishlist)">
+            <td>{{wishlist.name}}</td>
+            <td>{{wishlist.public}}</td>
+            <td>{{wishlist.items.length}}</td>
+        </tr>
+        <tr ng-show="creds.user === currentUser._id">
+        	<td colspan="3">Create New List</td>
+        </tr>
+    </table>
+</div>
